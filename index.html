@@ -291,7 +291,7 @@ body.greenmode .dviz.warn .vd{background:var(--mut)}
 
   <div class="card anim" style="--d:.05s;margin-top:24px;padding:22px">
     <div style="font-size:12.5px;color:var(--mut);margin-bottom:12px">Système détecté : <b style="color:var(--ink)" id="osName">…</b></div>
-    <a class="short" id="mainDl" href="#" style="text-decoration:none">
+    <a class="short" id="mainDl" href="#" style="text-decoration:none;color:var(--ink)">
       <span class="sic"><b style="font-size:20px">↓</b></span>
       <span class="stxt"><b id="mainName" style="font-size:16px">Télécharger</b><span class="slink">Dernière version publiée</span></span>
       <span class="go">→</span>
@@ -302,11 +302,11 @@ body.greenmode .dviz.warn .vd{background:var(--mut)}
   <div class="kick" style="margin-top:26px">Autres systèmes</div>
   <div id="osgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:10px"></div>
 
-  <div class="sub" style="margin-top:28px;text-align:center;font-size:12px">Lien toujours vers la <b>dernière</b> release · <a href="https://github.com/louisrivault1-cpu/biblio-releases/releases/latest" target="_blank" rel="noopener" style="color:var(--azur)">toutes les versions ↗</a></div>
+  <div class="sub" style="margin-top:28px;text-align:center;font-size:12px">Lien toujours vers la <b>dernière</b> release · <a href="https://github.com/louisrivault1-cpu/biblio-releases/releases/latest" target="_blank" rel="noopener" style="color:var(--mut)">toutes les versions ↗</a></div>
 </div>
 <button onclick="var r=document.body,d=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',d)" style="position:fixed;top:18px;right:18px;border:1px solid var(--line);background:var(--glassinner);color:var(--ink);border-radius:999px;padding:7px 13px;font:600 12.5px var(--font-ui);cursor:pointer">◐ Thème</button>
 <script>
-  var ICONS={macos:'<svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none;width:22px;height:22px"><path d="M16.365 1.43c0 1.14-.417 2.2-1.11 3.02-.837.99-2.204 1.75-3.31 1.66-.13-1.08.44-2.23 1.13-2.96.78-.83 2.13-1.44 3.29-1.5zM20.79 17.5c-.6 1.38-.89 1.99-1.66 3.21-1.07 1.7-2.58 3.82-4.45 3.83-1.66.02-2.09-1.08-4.34-1.07-2.25.01-2.72 1.09-4.38 1.07-1.87-.02-3.3-1.93-4.37-3.63C-.98 18.65-1.13 12.9 1.72 9.85c1.02-1.09 2.36-1.78 3.83-1.78 1.66 0 2.7 1.09 4.07 1.09 1.33 0 2.14-1.09 4.06-1.09 1.31 0 2.7.71 3.69 1.94-3.24 1.78-2.71 6.4.42 7.49z"/></svg>',windows:'<svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none;width:20px;height:20px"><path d="M0 3.5L9.75 2.16v9.34H0V3.5zM10.94 2l13.06-1.8v11.3H10.94V2zM0 12.66h9.75v9.34L0 20.66v-8zM10.94 12.66H24v11.14L10.94 22V12.66z"/></svg>',linux:'<svg viewBox="0 0 24 24" style="stroke:none;width:22px;height:22px"><ellipse cx="12" cy="13.5" rx="5" ry="6.5" fill="currentColor"/><ellipse cx="12" cy="15" rx="3" ry="4.2" fill="#fff"/><circle cx="10.1" cy="8.4" r="1.15" fill="#fff"/><circle cx="13.9" cy="8.4" r="1.15" fill="#fff"/><circle cx="10.3" cy="8.5" r=".5" fill="#111"/><circle cx="13.7" cy="8.5" r=".5" fill="#111"/><path d="M10.7 9.8 L12 11.3 L13.3 9.8 Z" fill="#f5a623"/><ellipse cx="9" cy="20.2" rx="2.1" ry="1" fill="#f5a623"/><ellipse cx="15" cy="20.2" rx="2.1" ry="1" fill="#f5a623"/></svg>'};ICONS.linuxarm=ICONS.linux;
+  var ICONS={macos:'<svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none;width:22px;height:22px"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>',windows:'<svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none;width:20px;height:20px"><path d="M0 3.5L9.75 2.16v9.34H0V3.5zM10.94 2l13.06-1.8v11.3H10.94V2zM0 12.66h9.75v9.34L0 20.66v-8zM10.94 12.66H24v11.14L10.94 22V12.66z"/></svg>',linux:'<svg viewBox="0 0 24 24" style="stroke:none;width:22px;height:22px"><ellipse cx="12" cy="13.5" rx="5" ry="6.5" fill="currentColor"/><ellipse cx="12" cy="15" rx="3" ry="4.2" fill="#fff"/><circle cx="10.1" cy="8.4" r="1.15" fill="#fff"/><circle cx="13.9" cy="8.4" r="1.15" fill="#fff"/><circle cx="10.3" cy="8.5" r=".5" fill="#111"/><circle cx="13.7" cy="8.5" r=".5" fill="#111"/><path d="M10.7 9.8 L12 11.3 L13.3 9.8 Z" fill="#f5a623"/><ellipse cx="9" cy="20.2" rx="2.1" ry="1" fill="#f5a623"/><ellipse cx="15" cy="20.2" rx="2.1" ry="1" fill="#f5a623"/></svg>'};ICONS.linuxarm=ICONS.linux;
   var REPO='louisrivault1-cpu/biblio-releases', BASE='https://github.com/'+REPO+'/releases/latest/download/';
   var OS={macos:{name:'macOS',file:'BiblioFusion-macOS.zip',steps:'Décompresse, glisse BiblioFusion dans Applications, puis clic droit → Ouvrir la première fois (avertissement « développeur non identifié »).'},
     windows:{name:'Windows',file:'BiblioFusion-Windows.zip',steps:'Décompresse et lance BiblioFusion.exe. Si Windows SmartScreen : Informations complémentaires → Exécuter quand même.'},
@@ -324,7 +324,7 @@ body.greenmode .dviz.warn .vd{background:var(--mut)}
   document.getElementById('mainSteps').innerHTML='<b>Après téléchargement :</b> '+esc(o.steps);
   var order=[cur].concat(['macos','windows','linux','linuxarm'].filter(function(k){return k!==cur;}));
   document.getElementById('osgrid').innerHTML=order.map(function(k){var x=OS[k];
-    return '<a class="short" href="'+BASE+x.file+'" download><span class="sic">'+(ICONS[k]||'')+'</span>'
+    return '<a class="short" href="'+BASE+x.file+'" download style="color:var(--ink);text-decoration:none"><span class="sic">'+(ICONS[k]||'')+'</span>'
       +'<span class="stxt"><b>'+esc(x.name)+(k===cur?' · détecté':'')+'</b><span class="slink">Télécharger .zip</span></span><span class="go">↓</span></a>';
   }).join('');
 </script>
