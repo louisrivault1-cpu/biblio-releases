@@ -1,0 +1,107 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Télécharger BiblioFusion — studio Etsy multi-boutiques en application locale.">
+<title>Installer BiblioFusion</title>
+</head><body>
+<style>
+:root{
+  --bg:#EDEEF0;--panel:#FFFFFF;--panel2:#F5F6F8;--ink:#0B0B0F;--mut:#6B7280;
+  --line:rgba(10,12,20,.10);--azur:#4895EF;--ok:#2b9d5f;
+  --glassbg:linear-gradient(160deg,rgba(255,255,255,.80),rgba(255,255,255,.54));--glass:saturate(180%) blur(30px);--glassbord:rgba(255,255,255,.72);--glasshi:inset 0 1px 0 rgba(255,255,255,.9);
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 24px 60px rgba(16,24,40,.14);
+  --title:'Schibsted Grotesk','Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ui:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;--e:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme:dark){:root{--bg:#08090C;--panel:#15171C;--panel2:#101216;--ink:#F5F6F8;--mut:#9AA0AA;--line:rgba(255,255,255,.09);--glassbg:linear-gradient(160deg,rgba(32,35,43,.74),rgba(17,19,25,.55));--glassbord:rgba(255,255,255,.14);--glasshi:inset 0 1px 0 rgba(255,255,255,.14);--shadow:0 1px 2px rgba(0,0,0,.5),0 24px 60px rgba(0,0,0,.6)}}
+:root[data-theme="dark"]{--bg:#08090C;--panel:#15171C;--panel2:#101216;--ink:#F5F6F8;--mut:#9AA0AA;--line:rgba(255,255,255,.09);--glassbg:linear-gradient(160deg,rgba(32,35,43,.74),rgba(17,19,25,.55));--glassbord:rgba(255,255,255,.14);--glasshi:inset 0 1px 0 rgba(255,255,255,.14);--shadow:0 1px 2px rgba(0,0,0,.5),0 24px 60px rgba(0,0,0,.6)}
+:root[data-theme="light"]{--bg:#EDEEF0;--panel:#FFFFFF;--panel2:#F5F6F8;--ink:#0B0B0F;--mut:#6B7280;--line:rgba(10,12,20,.10);--glassbg:linear-gradient(160deg,rgba(255,255,255,.80),rgba(255,255,255,.54));--glassbord:rgba(255,255,255,.72);--glasshi:inset 0 1px 0 rgba(255,255,255,.9);--shadow:0 1px 2px rgba(16,24,40,.06),0 24px 60px rgba(16,24,40,.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);-webkit-font-smoothing:antialiased;padding:40px 20px 70px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto}
+.top{display:flex;align-items:center;gap:12px}
+.wm{font-family:var(--title);font-weight:900;letter-spacing:.5px;font-size:16px;border:1px solid var(--line);border-radius:9px;padding:5px 11px}
+.themebtn{margin-left:auto;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600}
+.kick{font-family:var(--title);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:22px}
+h1{font-family:var(--title);font-weight:800;font-size:34px;letter-spacing:-.025em;margin:4px 0 8px;text-wrap:balance}
+.lede{color:var(--mut);font-size:15px;max-width:60ch}
+.hero{margin-top:26px;background:var(--glassbg);backdrop-filter:var(--glass);-webkit-backdrop-filter:var(--glass);border:1px solid var(--glassbord);border-radius:22px;box-shadow:var(--glasshi),var(--shadow);padding:24px}
+.hero .det{font-size:12.5px;color:var(--mut);margin-bottom:12px}
+.hero .det b{color:var(--ink)}
+.dlbtn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);text-decoration:none;font-family:var(--title);font-weight:800;font-size:16px;padding:14px 22px;border-radius:14px;transition:transform .15s var(--e)}
+.dlbtn:hover{transform:translateY(-2px)}
+.dlbtn .ico{font-size:19px}
+.steps{margin-top:14px;font-size:13px;color:var(--mut)}
+.steps b{color:var(--ink)}
+.others{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px}
+.oscard{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--panel2);display:flex;flex-direction:column;gap:8px}
+.oscard.cur{border-color:color-mix(in srgb,var(--azur) 45%,var(--line));box-shadow:0 0 0 3px color-mix(in srgb,var(--azur) 12%,transparent)}
+.oscard .nm{font-family:var(--title);font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+.oscard .tag{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--azur)}
+.oscard a{font-size:12.5px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:7px 10px;text-align:center;font-weight:600;background:var(--panel)}
+.oscard a:hover{border-color:var(--ink)}
+.oscard .hint{font-size:11.5px;color:var(--mut)}
+.foot{margin-top:30px;font-size:12px;color:var(--mut);text-align:center;line-height:1.7}
+.foot a{color:var(--azur);text-decoration:none}
+h2{font-family:var(--title);font-weight:800;font-size:16px;margin:28px 0 4px}
+</style>
+
+<div class="wrap">
+  <div class="top"><span class="wm">BIBLIO</span><button class="themebtn" id="themeBtn">◐ Thème</button></div>
+  <div class="kick">Installation</div>
+  <h1>Installer BiblioFusion</h1>
+  <div class="lede">Ton studio Etsy multi-boutiques, en application locale. Télécharge la dernière version pour ton système — toujours à jour, sans compte.</div>
+
+  <div class="hero">
+    <div class="det">Système détecté : <b id="osName">…</b></div>
+    <a class="dlbtn" id="mainDl" href="#"><span class="ico" id="mainIco">⬇</span> <span id="mainLbl">Télécharger</span></a>
+    <div class="steps" id="mainSteps"></div>
+  </div>
+
+  <h2>Autres systèmes</h2>
+  <div class="others" id="others"></div>
+
+  <div class="foot">
+    Version publiée automatiquement · lien toujours vers la <b>dernière</b> release.<br>
+    Toutes les versions : <a id="allLink" href="#" target="_blank" rel="noopener">page des releases ↗</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, b=document.getElementById('themeBtn');
+  b.addEventListener('click',function(){ var c=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'); root.setAttribute('data-theme',c==='dark'?'light':'dark'); });
+})();
+(function(){
+  // URLs STABLES : GitHub redirige /releases/latest/download/<fichier> vers la dernière release.
+  var REPO='louisrivault1-cpu/biblio-releases';
+  var BASE='https://github.com/'+REPO+'/releases/latest/download/';
+  document.getElementById('allLink').href='https://github.com/'+REPO+'/releases/latest';
+  var OS={
+    macos:{name:'macOS',ico:'',file:'BiblioFusion-macOS.zip',steps:'Décompresse, glisse <b>BiblioFusion</b> dans <b>Applications</b>, puis <b>clic droit → Ouvrir</b> la première fois (pour lever l\'avertissement « développeur non identifié »).'},
+    windows:{name:'Windows',ico:'',file:'BiblioFusion-Windows.zip',steps:'Décompresse et lance <b>BiblioFusion.exe</b>. Si Windows SmartScreen apparaît : <b>Informations complémentaires → Exécuter quand même</b>.'},
+    linux:{name:'Linux',ico:'',file:'BiblioFusion-Linux.zip',steps:'Décompresse, rends le binaire exécutable (<b>chmod +x</b>) puis lance-le.'},
+    linuxarm:{name:'Linux ARM64',ico:'',file:'BiblioFusion-Linux-arm64.zip',steps:'Décompresse, <b>chmod +x</b> puis lance le binaire ARM64.'}
+  };
+  function esc(s){return String(s).replace(/[<>&]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c];});}
+  function detect(){
+    var ua=(navigator.userAgent||'')+' '+(navigator.platform||'');
+    if(/Mac|iPhone|iPad|iPod/i.test(ua)) return 'macos';
+    if(/Win/i.test(ua)) return 'windows';
+    if(/aarch64|arm64/i.test(ua)) return 'linuxarm';
+    if(/Linux|X11|Ubuntu/i.test(ua)) return 'linux';
+    return 'macos';
+  }
+  var cur=detect(), o=OS[cur];
+  document.getElementById('osName').textContent=o.name;
+  document.getElementById('mainLbl').textContent='Télécharger pour '+o.name;
+  document.getElementById('mainDl').href=BASE+o.file;
+  document.getElementById('mainDl').setAttribute('download','');
+  document.getElementById('mainSteps').innerHTML='<b>Après téléchargement :</b> '+o.steps;
+  var order=['macos','windows','linux','linuxarm'].filter(function(k){return k!==cur;});
+  document.getElementById('others').innerHTML=[cur].concat(order).map(function(k){ var x=OS[k];
+    return '<div class="oscard'+(k===cur?' cur':'')+'"><div class="nm">'+esc(x.name)+(k===cur?'<span class="tag">détecté</span>':'')+'</div>'
+      +'<a href="'+BASE+x.file+'" download>Télécharger .zip</a>'
+      +'<div class="hint">'+x.steps.replace(/<[^>]+>/g,'')+'</div></div>';
+  }).join('');
+})();
+</script>
+</body></html>
